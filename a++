@@ -1,0 +1,145 @@
+#!/bin/bash
+#
+#
+#
+export APPNOME="Montador de Arquivo Fonte do SDK do Bin S.O"
+export FONTE="makeapp.asm"
+export AUTOR="Felipe Miguel Nery Lunkes"
+#
+#
+
+FAZER(){
+	
+clear
+echo "___________________________________________________"
+echo "|       Dev Suite SDK do Bin S.O para Linux       |"
+echo "|                                                 |"
+echo "|  Copyright (C) 2013 Felipe Miguel Nery Lunkes   |"
+echo "|_________________________________________________|"
+echo "|                                                 |"
+echo "|         IDE Assembly do SDK do Bin S.O          |"
+echo "|                                                 |"
+echo "|                Versão 1.0 Linux                 |"
+echo "|_________________________________________________|"
+echo -e
+echo -e
+echo "Abrindo espaço de trabalho e montando fonte..."
+echo -e
+echo -e
+sudo echo "[bits 16]   ;; Define que o aplicativo deve ser 16 Bits" >> makeapp.asm
+sudo echo "[org 0]     ;; Organiza o Offset para 0 ( Obrigatório! Não altere esta diretiva. )" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "jmp inicio" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "%include 'lib/video.s'" >> makeapp.asm
+sudo echo "%include 'lib/teclado.s'" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo ";;****************************************************************" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "inicio:     ;; Processao principal do aplicativo ( Obrigatório )" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "mov ax,cs   ;; Ajusta a área de memória a ser executado o aplicativo" >> makeapp.asm
+sudo echo "mov ds,ax" >> makeapp.asm
+sudo echo "mov es,ax" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo ";; Seu código aqui" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "jmp fim      ;; Pula para o fim do aplicativo ( Obrigatório )" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo ";;******************************************************************" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo ";;****************************************************************" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "fim:         ;; Fim do aplicativo" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "jmp 0x1000:0 ;; Fim do aplicativo (Obrigatório)" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo ";; Variaveis e constantes deverão ser declaradas abaixo." >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "SIS db 'Bin S.O', 0" >> makeapp.asm
+sudo echo "VERSAO db 'Versao deste aplicativo: Versao aqui.',0" >> makeapp.asm
+sudo echo "LICENCA db 'Licenca deste aplicativo: Licenca aqui.',0" >> makeapp.asm
+sudo echo "AUTOR db 'Autor: Seu nome aqui.',0" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo "" >> makeapp.asm
+sudo echo ";; Fim" >> makeapp.asm
+echo -e
+echo "Nome do arquivo fonte criado: makeapp.asm"
+echo -e
+echo -e
+clear
+echo "___________________________________________________"
+echo "|       Dev Suite SDK do Bin S.O para Linux       |"
+echo "|                                                 |"
+echo "|  Copyright (C) 2013 Felipe Miguel Nery Lunkes   |"
+echo "|_________________________________________________|"
+echo "|                                                 |"
+echo "|         IDE Assembly do SDK do Bin S.O          |"
+echo "|                                                 |"
+echo "|                Versão 1.0 Linux                 |"
+echo "|_________________________________________________|"
+echo -e
+echo -e
+echo "Abrindo arquivo fonte para a edição..."
+echo -e
+sleep 4
+echo -e
+geany makeapp.asm
+clear
+echo "___________________________________________________"
+echo "|       Dev Suite SDK do Bin S.O para Linux       |"
+echo "|                                                 |"
+echo "|  Copyright (C) 2013 Felipe Miguel Nery Lunkes   |"
+echo "|_________________________________________________|"
+echo "|                                                 |"
+echo "|         IDE Assembly do SDK do Bin S.O          |"
+echo "|                                                 |"
+echo "|                Versão 1.0 Linux                 |"
+echo "|_________________________________________________|"
+echo -e
+echo -e
+echo "Pronto. Utilize montar makeapp.asm para compilar seu aplicativo."
+echo -e
+echo -e
+}
+
+if test "`whoami`" != "root" ; then
+
+    clear
+echo "___________________________________________________"
+echo "|       Dev Suite SDK do Bin S.O para Linux       |"
+echo "|                                                 |"
+echo "|  Copyright (C) 2013 Felipe Miguel Nery Lunkes   |"
+echo "|_________________________________________________|"
+echo "|                                                 |"
+echo "|         IDE Assembly do SDK do Bin S.O          |"
+echo "|                                                 |"
+echo "|                Versão 1.0 Linux                 |"
+echo "|_________________________________________________|"
+echo -e
+echo -e
+echo "Aviso: Voce nao executou o Bin S.O Dev Suite a++ como root."
+echo -e
+echo "O processo nao pode continuar caso o usuario nao seja root."
+echo -e
+echo -e
+	
+exit
+
+fi
+
+FAZER

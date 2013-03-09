@@ -1,0 +1,49 @@
+#!/bin/bash
+#
+#
+#
+# Configurador de pacotes do SDK
+#
+#
+#
+
+if test "`whoami`" != "root" ; then
+
+    clear
+    echo "___________________________________________________"
+	echo "|     Instalador da IDE do Bin S.O Versao 1.0     |"
+	echo "|                                                 |"
+	echo "|  Copyright (C) 2013 Felipe Miguel Nery Lunkes   |"
+	echo "|_________________________________________________|"
+	echo -e
+	echo -e
+	echo "Aviso: Voce nao executou o configurador da IDE como root."
+	echo -e
+	echo "O processo nao pode continuar caso o usuario nao seja root."
+	echo -e
+	echo -e
+	
+	exit
+fi
+
+
+	clear
+	echo "___________________________________________________"
+	echo "|     Instalador da IDE do Bin S.O Versao 1.0     |"
+	echo "|                                                 |"
+	echo "|  Copyright (C) 2013 Felipe Miguel Nery Lunkes   |"
+	echo "|_________________________________________________|"
+	echo -e
+	echo -e
+	echo "Instalando aplicativos necessários..."
+	echo -e
+	echo -e
+	./util nano
+	./util nasm
+	./util qemu
+	./util geany
+	echo -e
+	echo -e
+	echo -e
+	exit
+	

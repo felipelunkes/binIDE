@@ -1,0 +1,44 @@
+#!/bin/bash
+#
+#
+#
+#
+# Script para verificar a disponibilidade de um dispositivo no sistema para o uso.
+#
+#
+#
+
+STATUS(){
+	
+	clear
+	echo "______________________________________________________"
+	echo "|  Dev Suite Gerenciador de Dispositivos do Bin S.O  |"
+	echo "|                                                    |"
+	echo "|    Copyright (C) 2013 Felipe Miguel Nery Lunkes    |"
+	echo "|____________________________________________________|"
+	echo -e
+	echo -e
+	echo "Obter Status de conexao de um dispositivo"
+	echo -e
+	echo -e
+		
+	if [ -e $DISPOSITIVO ]; then
+
+    echo "O dispositivo '$DISPOSITIVO' requisitado esta conectado ao computador, presente e disponivel."
+    else
+    echo "O dispositivo '$DISPOSITIVO' requisitado nao esta disponivel no momento."
+    fi
+    
+   echo -e
+   exit 
+   
+}
+
+export DISPOSITIVO=$1
+export APPNOME="Verificador de dispositivos do Dev Suite para Bin S.O"
+export AUTOR="Felipe Miguel Nery Lunkes"
+export COPYRIGHT="Copyright (C) 2013 Felipe Miguel Nery Lunkes"
+
+STATUS
+
+

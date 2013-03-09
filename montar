@@ -1,0 +1,80 @@
+#!/bin/bash
+#
+#
+#
+# Aplicativo Script para montar (compilar) aplicativos em linguagem Assembly para o Bin S.O
+#
+#
+#
+
+MONTAR(){
+	
+	clear
+	echo "_________________________________________________________"
+	echo "| Dev Suite Compilador de Aplicativos ASM+ para Bin S.O |"
+	echo "|                                                       |"
+	echo "|      Copyright (C) 2013 Felipe Miguel Nery Lunkes     |"
+	echo "|_______________________________________________________|"
+	echo -e
+	echo -e
+	echo "Montando seu aplicativo..."
+	echo -e
+	$NASM $DIRETIVAS $FONTES -o $SAIDA 
+	echo -e
+	if [ -e $SAIDA ]; then
+    sucesso
+    else
+    erro
+    fi
+		
+}
+
+sucesso(){
+	
+	echo -e
+	echo "O processo de compilação/montagem retornou sucesso."
+	echo -e
+	echo "Nome do aplicativo Bin S.O (R) gerado: $SAIDA"
+	echo -e
+	exit
+	
+}
+
+erro(){
+	
+	echo -e
+	echo "O processo de compilação/montagem retornou erro(s) durante o processo."
+	echo -e
+	echo "O processo foi interrompido."
+	echo -e
+	exit
+}
+
+if test "`whoami`" != "root" ; then
+
+    clear
+    echo "___________________________________________________"
+	echo "| Dev Suite Gerenciador de Instalações do Bin S.O |"
+	echo "|                                                 |"
+	echo "|   Compilador/Montador de aplicativos Bin S.O    |"
+	echo "|_________________________________________________|"
+	echo -e
+	echo -e
+	echo "Aviso: Voce nao executou o Bin S.O Dev Suite compilador de aplicativos como root."
+	echo -e
+	echo "O processo nao pode continuar caso o usuario nao seja root."
+	echo -e
+	echo -e
+	
+	exit
+fi
+
+export FONTES=$1
+export NASM="nasm"
+export DIRETIVAS="-f bin -O0"
+export AUTOR="Felipe Miguel Nery Lunkes"
+export Copyright="Copyright (C) 2013 Felipe Miguel Nery Lunkes"
+export APPNOME="1.0"
+export APPNOME="Montador de aplicativos Assembly para o Bin S.O. Executado sobre Linux."
+export SAIDA=$2
+MONTAR

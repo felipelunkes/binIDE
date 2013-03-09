@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+#
+# Script que exibe apenas as informações da API do Bin S.O e informações do IDE
+#
+#
+#
+
+clear
+echo "___________________________________________________"
+echo "|       Dev Suite SDK do Bin S.O para Linux       |"
+echo "|                                                 |"
+echo "|  Copyright (C) 2013 Felipe Miguel Nery Lunkes   |"
+echo "|_________________________________________________|"
+echo "|                                                 |"
+echo "|            Sobre o Bin S.O e a IDE              |"
+echo "|                                                 |"
+echo "|                Versão 1.0 Linux                 |"
+echo "|_________________________________________________|"
+echo -e
+echo -e
+echo "Versão desta IDE para Linux: 1.0"
+echo "Versão do Bin S.O a qual esta IDE se destina: 1.0"
+echo "Versão da API de aplicativos do Bin S.O: 1.0"
+echo "Versão da API da IDE para Linux: 1.0"
+echo -e
+echo -e
+exit
+
