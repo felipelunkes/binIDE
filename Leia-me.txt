@@ -1,0 +1,23 @@
+IDE do Bin S.O para Windows NT 
+---*---*---*---*---*---*---*---
+
+Esta IDE fornece as ferramentas básicas para criar aplicativos de terceiros para o Bin S.O.
+
+Ferramentas inclusas nesta versão:
+
+a++: Gera um template de programa que inclui as principais bibliotecas.
+binc: Compila o programa criado após a edição.
+
+Use binc makeapp.asm ou arquivo.asm para compilar seu aplicativo.
+
+
+
+
+
+
+
+
+
+
+
+Para Bin S.O 0.1.1 apenas.
