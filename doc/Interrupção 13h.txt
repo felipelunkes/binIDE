@@ -1,0 +1,16 @@
+Função 02h
+Parâmetros
+
+al – número de setores (1-128)
+ch – número do cilindro (0-1023)
+cl – número do setor (1-17)
+dh – número da cabeça de leitura (0-15)
+dl – drive (0 = Drive a: 80h = Primeiro Disco Rígido)
+es:bx – Buffer para os dados
+
+Retorno
+
+cf – 0 se sucesso, 1 caso haja erro
+ah – 0 se sucesso ou o código do erro
+al – número de setores escritos
+

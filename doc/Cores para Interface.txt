@@ -1,0 +1,22 @@
+Para se criar uma interface utilizando a biblioteca interface do Bin S.O, você deve inserir uma cor de fundo para a tela. As cores de fundo disponíveis são:
+
+Caixa branca sobre fundo verde:	00101111b
+Caixa branca sobre fundo preto	00001111b
+Caixa vermelha sobre fundo verde: 10100100b
+Caixa branca sobre fundo vermelho claro: 11001111b
+Caixa preta sobre fundo branco:	11110000b
+  
+
+Para isso, a biblioteca já fornece os valores determinados para facilitar a criação de interfaces:
+
+Caixa branca sobre fundo verde:	00101111b           = branco_verde
+Caixa branca sobre fundo preto	00001111b           = branco_preto
+Caixa vermelha sobre fundo verde: 10100100b         = vermelho_verde
+Caixa branca sobre fundo vermelho claro: 11001111b  = branco_vermelho
+Caixa preta sobre fundo branco:	11110000b           = preto_branco
+
+Insira:
+
+mov cx, cor
+ 
+Assim, a cor selecionada será usada para criar a interface.
