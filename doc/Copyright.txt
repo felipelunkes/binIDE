@@ -3,4 +3,4 @@ Copyright (C) 2013 Felipe Miguel Nery Lunkes
 Avisos:
 
 
-A biblioteca de interface se baseia em software de código aberto e foi modificada para ser funcional no sistema operacional Bin S.O.
+A biblioteca de interface pode se basear em softwares de código aberto e foi modificada para ser funcional no sistema operacional Bin S.O, utilizando os recursos do Bin S.O.
