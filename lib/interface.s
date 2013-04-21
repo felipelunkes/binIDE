@@ -749,9 +749,9 @@ caixadialogo:
 
 
 	.botao_ok	db 'Confirmar', 0
-	.botao_cancelarar	db 'cancelarar', 0
+	.botao_cancelarar	db 'Cancelar', 0
 	.ok_botao_noselecionar	db '   Confirmar   ', 0
-	.cancelar_botao_noselecionar	db '   cancelarar   ', 0
+	.cancelar_botao_noselecionar	db '   Cancelar   ', 0
 
 	.tmp dw 0
 
