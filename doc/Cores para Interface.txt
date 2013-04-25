@@ -2,18 +2,19 @@ Para se criar uma interface utilizando a biblioteca interface do Bin S.O, você d
 
 Caixa branca sobre fundo verde:	00101111b
 Caixa branca sobre fundo preto	00001111b
-Caixa vermelha sobre fundo verde: 10100100b
+Fundo verde:   10100100b
 Caixa branca sobre fundo vermelho claro: 11001111b
-Caixa preta sobre fundo branco:	11110000b
-  
+Fundo branco:	11110000b
+Caixa branca sobre fundo marrom: 01100000b  
 
 Para isso, a biblioteca já fornece os valores determinados para facilitar a criação de interfaces:
 
 Caixa branca sobre fundo verde:	00101111b           = branco_verde
 Caixa branca sobre fundo preto	00001111b           = branco_preto
-Caixa vermelha sobre fundo verde: 10100100b         = vermelho_verde
+Fundo verde: 10100100b                              = vermelho_verde
 Caixa branca sobre fundo vermelho claro: 11001111b  = branco_vermelho
-Caixa preta sobre fundo branco:	11110000b           = preto_branco
+Fundo branco:	11110000b                           = preto_branco
+Caixa branca sobre fundo marrom: 01100000b          = branco_marrom
 
 Insira:
 

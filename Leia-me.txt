@@ -8,12 +8,9 @@ Ferramentas inclusas nesta versão:
 a++: Gera um template de programa que inclui as principais bibliotecas.
 binc: Compila o programa criado após a edição.
 
-Use binc makeapp.asm ou arquivo.asm para compilar seu aplicativo.
+Use binc para compilar seu aplicativo.
 
-
-
-
-
+Clique duas vezes em binc e siga os passos da tela.
 
 
 

@@ -17,33 +17,91 @@
 ;;																	*
 ;;*******************************************************************
 
-   
-;;****************************************************************
-
-;; Biblioteca de definicoes para aplicativos baseados
-;; no Bin S.O 0.1.1 Apollo apenas. Nao utilize para Bin S.O 0.1.0
 
 ;;****************************************************************
 
 
-apollo:
+binparadecimal:
+
+;; AL = entrada
+;; AX = Saída
+
+	pusha
+
+	mov bl, al			
+
+	and ax, 0Fh			
+	mov cx, ax			
+
+	shr bl, 4		
+	mov al, 10
+	mul bl				
+
+	add ax, cx			
+	mov [.tmp], ax
+
+	popa
+	mov ax, [.tmp]			
+	ret
 
 
-mov ax, cs
-mov ds, ax
-mov es, ax
-
-mov ax, 0             ;; Debug Indisponível
-mov [0x8FFE], ax
-
-mov ax, 1
-mov [0x8FFF], ax
-
+	.tmp	dw 0
+	
+	
+	
 ;;****************************************************************
 
 	
-API db '1.0',0
-KI EQU 1000
-BINVER db '0.1.1',0	
-RC db 'RC1',0
-%define BRC 1
+	pausar:
+	
+	;; AX: Tempo para pausar a execução do programa
+	
+	
+	pusha
+	cmp ax, 0
+	je .passou			
+
+	mov cx, 0
+	mov [.var_contar], cx		
+
+	mov bx, ax
+	mov ax, 0
+	mov al, 2			
+	mul bx				
+	mov [.delayoriginal], ax	
+
+	mov ah, 0
+	int 1Ah				
+
+	mov [.anterior], dx	
+
+.checarloop:
+	mov ah,0
+	int 1Ah				
+
+	cmp [.anterior], dx	
+
+	jne .sincronizado			
+	jmp .checarloop			
+
+.passou:
+	popa
+	ret
+
+.sincronizado:
+	mov ax, [.var_contar]		
+	inc ax
+	mov [.var_contar], ax
+
+	cmp ax, [.delayoriginal]
+	jge .passou			
+
+	mov [.anterior], dx	
+
+	jmp .checarloop			
+
+
+	.delayoriginal	dw	0
+	.var_contar		dw	0
+	.anterior	dw	0
+
